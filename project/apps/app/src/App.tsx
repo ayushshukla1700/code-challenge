@@ -1,11 +1,5 @@
-// feat: Fetch and display Pokémon list
-
-// - Used useEffect to fetch Pokémon from API
-// - Implemented error handling and loading state
-// - Passed Pokémon names as props to List component
-
-import { useEffect, useState } from "react";
-import { List } from "ui"; 
+import React, { useEffect, useState } from "react";
+import { List } from "ui";
 
 const api = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
@@ -41,11 +35,7 @@ const App = () => {
   return (
     <>
       <h1>Pokémon List:</h1>
-      <ul>
-        {pokemon.map((p) => (
-          <li key={p.name}>{p.name}</li>
-        ))}
-      </ul>
+      <List items={pokemon.map((p) => p.name)} />
     </>
   );
 };
